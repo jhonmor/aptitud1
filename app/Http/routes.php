@@ -27,9 +27,18 @@ Route::get('/', function(){
 );
 
 
+Route::get('consulta', 'ConsultaController@index');
+
+
 Route::resource('questions','QuestionsController',['only' => ['show','edit','create','store','update','destroy']]);
 
 Route::get('/questions','QuestionsController@index');
+
+
+
+Route::resource('/resultado','ResultadoController');
+
+Route::post('enviarresultado', 'ResultadoController@enviarresultado');
 
 
 Route::get('home', 'HomeController@index');
